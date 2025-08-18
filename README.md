@@ -29,19 +29,4 @@ Drivers are assigned to riders based on **distance** and **ratings**.
 
 
 
-📍 Ride Assignment Snapshot:
-   ------------------------------
-   🚗 Driver: Alice (⭐ 4.8)
-   🙋 Rider : Bob
-   📏 Distance: 3 km
-   ------------------------------
 
-📜 Ride History:
-----------------------------------------
-🚗 Alice → 🙋 Bob | 📏 3 km
-----------------------------------------
-
-Ride-Sharing-Dispatch/
-│── src/
-│   └── rideshare.py
-│── README.md
