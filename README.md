@@ -27,8 +27,7 @@ Drivers are assigned to riders based on **distance** and **ratings**.
 
 ---
 
-cd src
-python rideshare.py
+
 
 📍 Ride Assignment Snapshot:
    ------------------------------
