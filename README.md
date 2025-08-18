@@ -27,20 +27,22 @@ Drivers are assigned to riders based on **distance** and **ratings**.
 
 ---
 
-## 🚀 Run
-```bash
-git clone https://github.com/your-username/ride-sharing-dispatch-simulator.git
-cd ride-shari
+cd src
+python rideshare.py
 
-Available Drivers: D1, D2, D3
-Incoming Rider: R1 (2.5 km away)
+📍 Ride Assignment Snapshot:
+   ------------------------------
+   🚗 Driver: Alice (⭐ 4.8)
+   🙋 Rider : Bob
+   📏 Distance: 3 km
+   ------------------------------
 
-Assigned Driver: D2 → Rider: R1 | Distance 2.5 km
+📜 Ride History:
+----------------------------------------
+🚗 Alice → 🙋 Bob | 📏 3 km
+----------------------------------------
 
-ride-sharing-dispatch-simulator/
-│── README.md
+Ride-Sharing-Dispatch/
 │── src/
-│   └── main.py
-│── screenshots/
-│   └── demo.png
-
+│   └── rideshare.py
+│── README.md
