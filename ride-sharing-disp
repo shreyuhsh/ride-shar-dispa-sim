@@ -1,7 +1,5 @@
 import heapq
 from collections import deque
-import random
-import time
 
 class Driver:
     def __init__(self, name, rating, location):
@@ -23,13 +21,16 @@ class RideSharing:
         self.ride_history = []
     def add_driver(self, driver):
         heapq.heappush(self.available_drivers, driver)
+        print(f"Driver {driver.name} added at location {driver.location} (⭐ {driver.rating})")
     def add_rider(self, rider):
         self.waiting_riders.append(rider)
+        print(f"Rider {rider.name} requested a ride from location {rider.location}")
         self.assign_driver()
     def distance(self, loc1, loc2):
         return abs(loc1 - loc2)
     def assign_driver(self):
         if not self.available_drivers or not self.waiting_riders:
+            print("No drivers or riders available for assignment.")
             return
         rider = self.waiting_riders.popleft()
         best_driver = None
@@ -39,4 +40,45 @@ class RideSharing:
             if d < best_dist:
                 best_driver = driver
                 best_dist = d
-        self.available_drivers.remove(best_driver
+        self.available_drivers.remove(best_driver)
+        heapq.heapify(self.available_drivers)
+        self.ride_history.append((best_driver.name, rider.name, best_dist))
+        print(f"✅ Assigned Driver: {best_driver.name} → Rider: {rider.name} | Distance {best_dist} km")
+    def show_history(self):
+        if not self.ride_history:
+            print("No rides completed yet.")
+            return
+        print("\n📜 Ride History:")
+        for ride in self.ride_history:
+            print(f"Driver {ride[0]} → Rider {ride[1]} | Distance {ride[2]} km")
+
+def menu():
+    app = RideSharing()
+    while True:
+        print("\n--- Ride Sharing Menu ---")
+        print("1. Add Driver")
+        print("2. Add Rider")
+        print("3. View Ride History")
+        print("4. Exit")
+        choice = input("Choose an option: ")
+        if choice == "1":
+            name = input("Driver name: ")
+            rating = float(input("Driver rating (0-5): "))
+            location = int(input("Driver location (number): "))
+            app.add_driver(Driver(name, rating, location))
+        elif choice == "2":
+            name = input("Rider name: ")
+            location = int(input("Rider location (number): "))
+            app.add_rider(Rider(name, location))
+        elif choice == "3":
+            app.show_history()
+        elif choice == "4":
+            print("Exiting Ride Sharing App...")
+            break
+        else:
+            print("Invalid choice, try again.")
+
+if __name__ == "__main__":
+    menu()
+
+        
