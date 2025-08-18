@@ -31,10 +31,12 @@ Drivers are assigned to riders based on **distance** and **ratings**.
 ```bash
 git clone https://github.com/your-username/ride-sharing-dispatch-simulator.git
 cd ride-shari
+
 Available Drivers: D1, D2, D3
 Incoming Rider: R1 (2.5 km away)
 
 Assigned Driver: D2 → Rider: R1 | Distance 2.5 km
+
 ride-sharing-dispatch-simulator/
 │── README.md
 │── src/
