@@ -1,0 +1,42 @@
+import heapq
+from collections import deque
+import random
+import time
+
+class Driver:
+    def __init__(self, name, rating, location):
+        self.name = name
+        self.rating = rating
+        self.location = location
+    def __lt__(self, other):
+        return self.rating > other.rating
+
+class Rider:
+    def __init__(self, name, location):
+        self.name = name
+        self.location = location
+
+class RideSharing:
+    def __init__(self):
+        self.available_drivers = []
+        self.waiting_riders = deque()
+        self.ride_history = []
+    def add_driver(self, driver):
+        heapq.heappush(self.available_drivers, driver)
+    def add_rider(self, rider):
+        self.waiting_riders.append(rider)
+        self.assign_driver()
+    def distance(self, loc1, loc2):
+        return abs(loc1 - loc2)
+    def assign_driver(self):
+        if not self.available_drivers or not self.waiting_riders:
+            return
+        rider = self.waiting_riders.popleft()
+        best_driver = None
+        best_dist = float("inf")
+        for driver in self.available_drivers:
+            d = self.distance(driver.location, rider.location)
+            if d < best_dist:
+                best_driver = driver
+                best_dist = d
+        self.available_drivers.remove(best_driver
