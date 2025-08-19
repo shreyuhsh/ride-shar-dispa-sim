@@ -1,3 +1,9 @@
+Project-Name/
+├── src/
+│   └── main.py   # (your code goes here)
+├── screenshots/
+│   └── demo.png  # (your sample output snapshot)
+└── README.md     # (project explanation)
 
 # Ride-Sharing Dispatch Simulator 🚖
 
