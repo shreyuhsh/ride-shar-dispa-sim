@@ -46,7 +46,6 @@ ride_sharing.py
 ### 🔑 Key Points:
 - **`![Demo Screenshot](demo.png)`** → displays your `demo.png` inside README.  
 - **`[ride_sharing.py](ride_sharing.py)`** → makes your `.py` file clickable (opens code directly in GitHub).  
-- Keep both `README.md`, `demo.png`, and `ride_sharing.py` in the **same folder (root of repo)** → so paths don’t break.  
 
 
 
