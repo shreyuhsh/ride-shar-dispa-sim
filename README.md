@@ -40,7 +40,7 @@ cd Ride-Sharing-Dispatch/src
 
 # Run the program
 ride_sharing.py
-![Demo](demo.png)
+(demo.png)
 
 
 
