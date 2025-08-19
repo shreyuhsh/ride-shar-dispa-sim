@@ -1,6 +1,6 @@
 Project-Name/
 ├── src/
-│   └── C:\Users\HP\Desktop\Ride sharing project\src\New Text Document.txt.py   
+│   └── ride_sharing.py   
 ├── screenshots/
 │   └── demo  # (your sample output snapshot)
 └── README.md     # (project explanation)
