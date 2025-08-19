@@ -40,8 +40,3 @@ cd Ride-Sharing-Dispatch/src
 
 # Run the program
 ride_sharing.py
-def assign_driver(rider, drivers):
-    # Sort drivers by distance (ascending) and rating (descending)
-    drivers.sort(key=lambda d: (d["distance"], -d["rating"]))
-    return drivers[0]
-
