@@ -1,9 +1,3 @@
-Project-Name/
-├── src/
-│   └── ride_sharing.py   
-├── screenshots/
-│   └── demo  # (your sample output snapshot)
-└── README.md     # (project explanation)
 
 # Ride-Sharing Dispatch Simulator 🚖
 
