@@ -26,7 +26,13 @@ Drivers are assigned to riders based on **distance** and **ratings**.
 - **Concepts**: Scheduling, Distance Calculation  
 
 ---
-python src/ride_sharing.py
+RideSharingProject/
+│
+├── README.md                # Instructions about the project
+│
+└── src/                     # Source code folder
+    └── ride_sharing.py      # Your Python code
+
 ---
 Welcome to Ride Sharing System
 1. Book a Ride
