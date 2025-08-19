@@ -1,4 +1,4 @@
-# ride-sharing-simulator
+
 # Ride-Sharing Dispatch Simulator 🚖
 
 <p align="center">
@@ -26,6 +26,17 @@ Drivers are assigned to riders based on **distance** and **ratings**.
 - **Concepts**: Scheduling, Distance Calculation  
 
 ---
+python src/ride_sharing.py
+---
+Welcome to Ride Sharing System
+1. Book a Ride
+2. View Available Drivers
+3. Exit
+Enter your choice: 1
+Enter pickup location: Downtown
+Enter drop location: Airport
+Ride booked successfully! Driver will arrive shortly.
+
 
 
 
