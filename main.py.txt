@@ -1,0 +1,75 @@
+import heapq
+import time
+import json
+import os
+
+class Driver:
+    def __init__(self, name, distance, rating):
+        self.name = name
+        self.distance = distance
+        self.rating = rating
+
+    def __lt__(self, other):
+        if self.distance == other.distance:
+            return self.rating > other.rating
+        return self.distance < other.distance
+
+class RideSharingDispatch:
+    def __init__(self, log_file="rides_log.txt"):
+        self.available_drivers = []
+        self.ride_history = []
+        self.log_file = log_file
+        self.load_history()
+
+    def add_driver(self, name, distance, rating):
+        heapq.heappush(self.available_drivers, Driver(name, distance, rating))
+
+    def request_ride(self, rider_name, destination):
+        if not self.available_drivers:
+            print("❌ No drivers available right now.")
+            return None
+        driver = heapq.heappop(self.available_drivers)
+        ride = {
+            "rider": rider_name,
+            "driver": driver.name,
+            "destination": destination,
+            "rating": driver.rating,
+            "time": time.strftime("%H:%M:%S")
+        }
+        self.ride_history.append(ride)
+        self.save_history()
+        print(f"✅ Ride confirmed! {driver.name} (⭐ {driver.rating}) "
+              f"is on the way for {rider_name} to {destination}.")
+        return ride
+
+    def show_history(self):
+        if not self.ride_history:
+            print("📂 No rides yet.")
+            return
+        print("\n📜 Ride History:")
+        for ride in self.ride_history:
+            print(f"[{ride['time']}] {ride['rider']} ➝ {ride['destination']} "
+                  f"(Driver: {ride['driver']}, ⭐ {ride['rating']})")
+
+    def save_history(self):
+        with open(self.log_file, "w") as f:
+            json.dump(self.ride_history, f, indent=4)
+
+    def load_history(self):
+        if os.path.exists(self.log_file):
+            with open(self.log_file, "r") as f:
+                self.ride_history = json.load(f)
+
+# -------------------- DEMO --------------------
+if __name__ == "__main__":
+    app = RideSharingDispatch()
+
+    app.add_driver("Alice", 3, 4.9)
+    app.add_driver("Bob", 2, 4.5)
+    app.add_driver("Charlie", 2, 4.8)
+
+    app.request_ride("John", "Airport")
+    app.request_ride("Emma", "Mall")
+    app.request_ride("Liam", "University")
+
+    app.show_history()
