@@ -1,8 +1,8 @@
 Project-Name/
 ├── src/
-│   └── main.py   # (your code goes here)
+│   └── C:\Users\HP\Desktop\Ride sharing project\src\New Text Document.txt.py   
 ├── screenshots/
-│   └── demo.png  # (your sample output snapshot)
+│   └── demo  # (your sample output snapshot)
 └── README.md     # (project explanation)
 
 # Ride-Sharing Dispatch Simulator 🚖
