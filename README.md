@@ -26,22 +26,6 @@ Drivers are assigned to riders based on **distance** and **ratings**.
 - **Concepts**: Scheduling, Distance Calculation  
 
 ---
-RideSharingProject/
-│
-├── README.md                # Instructions about the project
-│
-└── src/                     # Source code folder
-    └── ride_sharing.py      # Your Python code
-
----
-Welcome to Ride Sharing System
-1. Book a Ride
-2. View Available Drivers
-3. Exit
-Enter your choice: 1
-Enter pickup location: Downtown
-Enter drop location: Airport
-Ride booked successfully! Driver will arrive shortly.
 
 
 
