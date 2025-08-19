@@ -27,6 +27,20 @@ Drivers are assigned to riders based on **distance** and **ratings**.
 
 ---
 
+---
+
+## ⚡ Quick Start  
+
+```bash
+# Clone this repository
+git clone https://github.com/your-username/Ride-Sharing-Dispatch.git
+
+# Navigate to project folder
+cd Ride-Sharing-Dispatch/src
+
+# Run the program
+python ride_sharing.py
+
 
 
 
